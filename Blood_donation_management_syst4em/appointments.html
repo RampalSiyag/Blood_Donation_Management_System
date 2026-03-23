@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Appointments - BloodLink</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="appointments.css" />
+    <link rel="stylesheet" href="notifications-panel.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Dark overlay for mobile sidebar -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+      <div class="mobile-header-left">
+        <div class="logo">
+          <div class="logo-icon">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <div class="logo-text">
+            <h2>BloodLink</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="mobile-header-right">
+        <i class="fa-regular fa-bell notification-bell"></i>
+        <button
+          class="menu-toggle"
+          onclick="toggleSidebar()"
+          style="
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+            background: none;
+            border: none;
+            margin-left: 15px;
+          "
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Top Navbar -->
+    <div class="topbar">
+      <h2>Appointments</h2>
+      <div class="topbar-right">
+        <i class="fa-regular fa-bell"></i>
+
+        <div class="profile" onclick="toggleProfileDropdown(event)">
+          <div class="profile-circle">P</div>
+          <span>Prince</span>
+          <i class="fa-solid fa-chevron-down" style="font-size: 12px"></i>
+          
+          <div class="profile-dropdown" id="profileDropdown">
+            <div class="profile-dropdown-header">
+              <h3>Prince</h3>
+              <p>b.tech161891435@gmail.com</p>
+            </div>
+            <div class="profile-dropdown-menu">
+              <a href="profile.html" class="profile-dropdown-item">
+                <i class="fa-regular fa-user"></i>
+                Profile
+              </a>
+              <a href="donation-history.html" class="profile-dropdown-item">
+                <i class="fa-regular fa-file-lines"></i>
+                Donation History
+              </a>
+              <a href="settings.html" class="profile-dropdown-item">
+                <i class="fa-solid fa-gear"></i>
+                Settings
+              </a>
+              <a href="redbloodcells.html" class="profile-dropdown-item logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <a href="index.html" class="logo-link">
+        <div class="logo">
+          <div class="logo-icon">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <div class="logo-text">
+            <h2>BloodLink</h2>
+            <p>Save Lives Together</p>
+          </div>
+        </div>
+      </a>
+
+      <div class="mobile-profile-section">
+        <button class="mobile-close-btn" onclick="toggleSidebar()">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="mobile-profile-info">
+          <div class="mobile-profile-circle">P</div>
+          <div class="mobile-profile-details">
+            <h3>Prince</h3>
+            <p>b.tech161891435@gmail.com</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu">
+        <a href="index.html">
+          <i class="fa-solid fa-house"></i> Dashboard
+        </a>
+        <a href="find-donors.html">
+          <i class="fa-solid fa-magnifying-glass"></i> Find Donors
+        </a>
+        <a href="bdreq.html">
+          <i class="fa-regular fa-heart"></i> Blood Requests
+        </a>
+        <a href="blood-banks.html">
+          <i class="fa-solid fa-building-columns"></i> Blood Banks
+        </a>
+        <a href="appointments.html" class="active">
+          <i class="fa-regular fa-calendar"></i> Appointments
+        </a>
+        <a href="admin-panel.html">
+          <i class="fa-solid fa-shield"></i> Admin Panel
+        </a>
+
+        <a href="profile.html" class="profile-link">
+          <i class="fa-regular fa-user"></i> Profile
+        </a>
+        <a href="redbloodcells.html" class="logout-link">
+          <i class="fa-solid fa-right-from-bracket"></i> Logout
+        </a>
+      </div>
+
+      <div class="donate-card">
+        <h3>Donate Today</h3>
+        <p>Your blood can save up to 3 lives!</p>
+        <button>Find Center</button>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Page Header -->
+      <div class="appointments-header">
+        <div>
+          <h1>My Appointments</h1>
+          <p>Manage your blood donation appointments</p>
+        </div>
+        <button class="btn-schedule-new">
+          <i class="fa-solid fa-plus"></i>
+          Schedule Donation
+        </button>
+      </div>
+
+      <!-- Tabs Section -->
+      <div class="appointments-tabs">
+        <button class="tab-button active" onclick="switchTab('upcoming')">
+          Upcoming (0)
+        </button>
+        <button class="tab-button" onclick="switchTab('past')">
+          Past (0)
+        </button>
+      </div>
+
+      <!-- Tab Content -->
+      <div class="tab-content" id="upcoming-tab">
+        <div class="empty-state-appointments">
+          <div class="empty-icon">
+            <i class="fa-regular fa-calendar"></i>
+          </div>
+          <h3>No Upcoming Appointments</h3>
+          <p>Schedule a blood donation to save lives</p>
+          <a href="blood-banks.html" class="btn-find-banks">Find Blood Banks</a>
+        </div>
+      </div>
+
+      <div class="tab-content hidden" id="past-tab">
+        <div class="empty-state-appointments">
+          <div class="empty-icon">
+            <i class="fa-regular fa-calendar"></i>
+          </div>
+          <h3>No Past Appointments</h3>
+          <p>Your donation history will appear here</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+    <script src="appointments.js"></script>
+    <script src="notifications-panel.js"></script>
+
+    <!-- Notifications Panel -->
+    <div class="notifications-overlay" id="notificationsOverlay" onclick="closeNotifications()"></div>
+    <div class="notifications-panel" id="notificationsPanel">
+      <div class="notifications-panel-header">
+        <div>
+          <h2>Notifications</h2>
+          <p>All caught up!</p>
+        </div>
+        <button class="notifications-close-btn" onclick="closeNotifications()">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="notifications-content">
+        <div class="notifications-empty-state">
+          <div class="notifications-bell-icon">
+            <i class="fa-regular fa-bell"></i>
+          </div>
+          <h3>No Notifications</h3>
+          <p>You're all caught up! Check back later for updates.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

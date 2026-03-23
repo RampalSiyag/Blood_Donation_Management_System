@@ -1,0 +1,445 @@
+/* ================================================
+   BLOOD REQUESTS PAGE - MOBILE RESPONSIVE CSS
+   Separate file for bdreq.html
+   ================================================ */
+
+/* Mobile Optimization - 768px and below */
+@media screen and (max-width: 768px) {
+  
+  /* ====================
+     PAGE HEADER WITH BUTTON
+     ==================== */
+  
+  body .main-content .page-header-with-button,
+  .main-content .page-header-with-button,
+  .page-header-with-button {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    width: 100% !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .page-header-with-button .page-header {
+    width: 100% !important;
+  }
+  
+  .page-header-with-button .page-header h1 {
+    font-size: 24px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 6px !important;
+  }
+  
+  .page-header-with-button .page-header p {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+  
+  /* Create Request Button - Full Width */
+  .page-header-with-button .create-request-btn,
+  .create-request-btn {
+    width: 100% !important;
+    padding: 14px 20px !important;
+    font-size: 15px !important;
+    justify-content: center !important;
+    border-radius: 12px !important;
+  }
+  
+  /* ====================
+     FILTER SECTION
+     ==================== */
+  
+  body .main-content .filter-section,
+  .main-content .filter-section,
+  .filter-section {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 18px !important;
+    margin-bottom: 20px !important;
+    box-sizing: border-box !important;
+  }
+  
+  .filter-section .filter-header {
+    font-size: 16px !important;
+    margin-bottom: 14px !important;
+  }
+  
+  /* FORCE Filter Grid to Single Column */
+  body .main-content .filter-section .filter-grid,
+  .main-content .filter-section .filter-grid,
+  .filter-section .filter-grid,
+  div.filter-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+  
+  /* Force all filter inputs to full width */
+  .filter-grid > .filter-input,
+  .filter-grid .filter-input,
+  div.filter-input {
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-column: 1 !important;
+  }
+  
+  .filter-input input,
+  .filter-input select {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 48px !important;
+    padding: 12px 16px 12px 44px !important;
+    box-sizing: border-box !important;
+    font-size: 15px !important;
+  }
+  
+  .filter-input select {
+    padding-left: 16px !important;
+  }
+  
+  /* ====================
+     REQUESTS GRID - FORCE SINGLE COLUMN
+     ==================== */
+  
+  body .main-content .requests-grid,
+  .main-content .requests-grid,
+  div.requests-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  /* Force each request card to full width */
+  .requests-grid > .blood-request-card,
+  .requests-grid .blood-request-card,
+  div.blood-request-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    grid-column: 1 !important;
+  }
+  
+  /* ====================
+     BLOOD REQUEST CARD
+     ==================== */
+  
+  .blood-request-card {
+    padding: 18px !important;
+    border-radius: 16px !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Status Badge Wrapper */
+  .status-badge-wrapper {
+    position: absolute !important;
+    top: 18px !important;
+    right: 18px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+    max-width: 50% !important;
+  }
+  
+  /* Request Card Header */
+  .request-card-header {
+    display: flex !important;
+    gap: 14px !important;
+    margin-bottom: 16px !important;
+    padding-right: 0 !important;
+  }
+  
+  /* Blood Type Large */
+  .blood-type-large {
+    width: 60px !important;
+    height: 60px !important;
+    font-size: 18px !important;
+    border-radius: 12px !important;
+    flex-shrink: 0 !important;
+  }
+  
+  /* Request Card Info */
+  .request-card-info {
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+  
+  .request-card-title {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    margin-bottom: 8px !important;
+  }
+  
+  .request-card-title h3 {
+    font-size: 16px !important;
+    line-height: 1.3 !important;
+    margin: 0 !important;
+    padding-right: 80px !important;
+  }
+  
+  .request-badges {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+  }
+  
+  .request-units {
+    font-size: 13px !important;
+    color: #888 !important;
+    margin: 0 !important;
+  }
+  
+  /* ====================
+     REQUEST CARD DETAILS
+     ==================== */
+  
+  .request-card-details {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    margin-bottom: 16px !important;
+  }
+  
+  .detail-row {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+  }
+  
+  .detail-row i {
+    font-size: 13px !important;
+    flex-shrink: 0 !important;
+    margin-top: 2px !important;
+  }
+  
+  .detail-row span {
+    flex: 1 !important;
+  }
+  
+  /* ====================
+     PROGRESS SECTION
+     ==================== */
+  
+  .progress-section {
+    margin-bottom: 16px !important;
+  }
+  
+  .progress-label {
+    display: flex !important;
+    justify-content: space-between !important;
+    margin-bottom: 8px !important;
+    font-size: 13px !important;
+  }
+  
+  .progress-label-text {
+    color: #666 !important;
+    font-weight: 500 !important;
+  }
+  
+  .progress-value {
+    color: #111 !important;
+    font-weight: 600 !important;
+  }
+  
+  .progress-bar {
+    width: 100% !important;
+    height: 8px !important;
+    background: #e5e7eb !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+  }
+  
+  .progress-fill {
+    height: 100% !important;
+    border-radius: 10px !important;
+    transition: width 0.3s !important;
+  }
+  
+  /* ====================
+     REQUEST ACTIONS (BUTTONS)
+     ==================== */
+  
+  .request-actions {
+    display: flex !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+  
+  .help-btn {
+    flex: 1 !important;
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+    border-radius: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    white-space: nowrap !important;
+  }
+  
+  .help-btn i {
+    font-size: 15px !important;
+  }
+  
+  .details-btn {
+    padding: 12px !important;
+    min-width: 44px !important;
+    border-radius: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  .details-btn i {
+    font-size: 15px !important;
+  }
+}
+
+/* ====================
+   EXTRA SMALL PHONES (375px and below)
+   ==================== */
+
+@media screen and (max-width: 375px) {
+  
+  .blood-request-card {
+    padding: 16px !important;
+  }
+  
+  .request-card-header {
+    gap: 12px !important;
+  }
+  
+  .blood-type-large {
+    width: 54px !important;
+    height: 54px !important;
+    font-size: 16px !important;
+  }
+  
+  .request-card-title h3 {
+    font-size: 15px !important;
+  }
+  
+  .help-btn {
+    font-size: 13px !important;
+    padding: 10px 12px !important;
+  }
+  
+  .help-btn span {
+    display: none !important;
+  }
+  
+  .help-btn::after {
+    content: "Help" !important;
+  }
+}
+
+/* ====================
+   SPECIFIC DEVICE WIDTHS
+   ==================== */
+
+@media screen and (max-width: 430px) {
+  .requests-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .requests-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media screen and (max-width: 393px) {
+  .requests-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .requests-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .requests-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ====================
+   PORTRAIT ORIENTATION
+   ==================== */
+
+@media screen and (max-width: 768px) and (orientation: portrait) {
+  .requests-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .filter-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ====================
+   HIGH SPECIFICITY OVERRIDES
+   ==================== */
+
+@media screen and (max-width: 768px) {
+  
+  html body .main-content .requests-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  html body .main-content .filter-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Force all children to full width */
+  .requests-grid > *,
+  .requests-grid > div,
+  .requests-grid > .blood-request-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    grid-column: 1 / 2 !important;
+  }
+  
+  .filter-grid > *,
+  .filter-grid > div,
+  .filter-grid > .filter-input {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    grid-column: 1 / 2 !important;
+  }
+}
+
+/* ====================
+   TABLET (769px - 1024px)
+   ==================== */
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .requests-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  .filter-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* ====================
+   LARGE DESKTOP (1440px+)
+   ==================== */
+
+@media screen and (min-width: 1440px) {
+  .requests-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}

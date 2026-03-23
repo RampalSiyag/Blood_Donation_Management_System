@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloodLink - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* (YOUR FULL CSS — SAME AS YOU SENT) */
+        :root {
+            --primary-red: #e01e37;
+            --dark-red: #640d14;
+            --white: #ffffff;
+            --glass-bg: rgba(20, 20, 30, 0.45);
+            --glass-border: rgba(255, 255, 255, 0.15);
+            --input-bg: rgba(0, 0, 0, 0.55);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+        body {
+            background: #050a14;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            filter: brightness(0.45) saturate(130%);
+        }
+
+        .video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(120,0,0,0.35), rgba(0,0,0,0.9));
+            z-index: 1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 420px;
+            padding: 40px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+        }
+
+        .tabs { display: flex; margin-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+
+        .tab-btn {
+            flex: 1;
+            padding: 15px;
+            background: transparent;
+            border: none;
+            color: rgba(255,255,255,0.4);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .tab-btn.active { color: var(--primary-red); }
+
+        .form-box { display: none; }
+        .form-box.active { display: block; }
+
+        h2 { color: white; margin-bottom: 8px; }
+        p.subtitle { color: rgba(255,255,255,0.5); margin-bottom: 25px; }
+
+        .input-group { margin-bottom: 20px; }
+        .input-group label { color: rgba(255,255,255,0.7); }
+
+        .input-group input, select {
+            width: 100%;
+            padding: 14px;
+            background: var(--input-bg);
+            border-radius: 12px;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #ff0a54, #990011);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .link { color: rgba(255,255,255,0.5); text-align: center; display: block; margin-top: 15px; }
+    </style>
+</head>
+
+<body>
+
+    <!-- VIDEO BACKGROUND -->
+    <video id="bg-video" autoplay muted loop playsinline>
+        <source src="blood.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+
+    <!-- LOGIN / SIGNUP CARD -->
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('login')">Login</button>
+            <button class="tab-btn" onclick="switchTab('signup')">Sign Up</button>
+        </div>
+
+        <!-- Login Form -->
+        <div id="login-form" class="form-box active">
+            <h2>Welcome Back</h2>
+            <p class="subtitle">Enter your details to access your donor profile.</p>
+            <form onsubmit="loginUser(event)">
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button class="btn">Login</button>
+            </form>
+        </div>
+
+        <!-- Signup Form -->
+        <div id="signup-form" class="form-box">
+            <h2>Join the Mission</h2>
+            <p class="subtitle">Every drop counts. Register today.</p>
+            <form onsubmit="registerUser(event)">
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" id="signupName" required>
+                </div>
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" id="signupEmail" required>
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="signupPassword" required>
+                </div>
+                <div class="input-group">
+                    <label>Blood Group</label>
+                    <select id="signupBlood">
+                        <option>A+</option><option>O+</option><option>B+</option><option>AB+</option>
+                        <option>A-</option><option>O-</option><option>B-</option><option>AB-</option>
+                    </select>
+                </div>
+                <button class="btn">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        /* SWITCH TABS */
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.form-box').forEach(f => f.classList.remove('active'));
+
+            const idx = tab === 'login' ? 0 : 1;
+            document.querySelectorAll('.tab-btn')[idx].classList.add('active');
+            document.getElementById(tab + '-form').classList.add('active');
+        }
+
+        /* LOGIN FUNCTION */
+        function loginUser(e) {
+            e.preventDefault();
+
+            const email = document.getElementById("loginEmail").value;
+            const password = document.getElementById("loginPassword").value;
+
+            // TEMP DEMO LOGIN (you can change later)
+            if (email && password) {
+
+                // Save login status
+                localStorage.setItem("isLoggedIn", "true");
+                localStorage.setItem("userEmail", email);
+
+                // Redirect to dashboard
+                window.location.href = "index.html";  // YOUR MAIN DASHBOARD PAGE
+            }
+        }
+
+        /* REGISTER FUNCTION */
+        function registerUser(e) {
+            e.preventDefault();
+
+            const name = document.getElementById("signupName").value;
+            const email = document.getElementById("signupEmail").value;
+
+            // Save user and auto login
+            localStorage.setItem("isLoggedIn", "true");
+            localStorage.setItem("userName", name);
+            localStorage.setItem("userEmail", email);
+
+            // Redirect to dashboard
+            window.location.href = "index.html";  // YOUR MAIN DASHBOARD PAGE
+        }
+    </script>
+
+</body>
+</html>

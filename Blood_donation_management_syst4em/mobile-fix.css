@@ -1,0 +1,1094 @@
+/* Mobile Fix for BloodLink - Add this to your index.css or include separately */
+
+/* Force proper mobile viewport */
+@viewport {
+  width: device-width;
+  zoom: 1.0;
+}
+
+/* Ensure body doesn't overflow on mobile */
+body {
+  width: 100%;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Mobile-specific fixes for cards and layout */
+@media (max-width: 768px) {
+  
+  /* Fix main content width and padding */
+  .main-content {
+    width: 100% !important;
+    max-width: 100vw !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 60px !important;
+    padding: 16px !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Welcome card - full width and proper spacing */
+  .welcome-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 20px 0 !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  
+  .welcome-text {
+    width: 100% !important;
+    margin-bottom: 16px !important;
+  }
+  
+  .welcome-text h2 {
+    font-size: 22px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 8px !important;
+  }
+  
+  .welcome-text p {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+  
+  .alert-box {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+  
+  /* Stats container - 2 columns on mobile */
+  .stats-container {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    width: 100% !important;
+    margin: 0 0 24px 0 !important;
+    box-sizing: border-box !important;
+  }
+  
+  .stat-card {
+    width: 100% !important;
+    padding: 16px 14px !important;
+    box-sizing: border-box !important;
+    min-height: 110px !important;
+  }
+  
+  .stat-info h3 {
+    font-size: 12px !important;
+  }
+  
+  .stat-info .stat-number {
+    font-size: 28px !important;
+  }
+  
+  .stat-info p {
+    font-size: 11px !important;
+  }
+  
+  .stat-icon {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 20px !important;
+  }
+  
+  /* Quick Actions section */
+  .quick-actions {
+    width: 100% !important;
+    margin: 24px 0 !important;
+  }
+  
+  .quick-actions h2 {
+    font-size: 18px !important;
+    margin-bottom: 16px !important;
+  }
+  
+  /* Actions grid - 2 columns on mobile */
+  .actions-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+  
+  .action-card {
+    width: 100% !important;
+    padding: 18px 16px !important;
+    box-sizing: border-box !important;
+    min-height: 140px !important;
+  }
+  
+  .action-icon {
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 20px !important;
+    margin-bottom: 12px !important;
+  }
+  
+  .action-card h3 {
+    font-size: 15px !important;
+    margin-bottom: 6px !important;
+  }
+  
+  .action-card p {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+  }
+  
+  /* Dashboard grid - stack on mobile */
+  .dashboard-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    width: 100% !important;
+    margin-top: 24px !important;
+  }
+  
+  .section-card {
+    width: 100% !important;
+    padding: 18px !important;
+    box-sizing: border-box !important;
+  }
+  
+  .section-header h2 {
+    font-size: 17px !important;
+  }
+  
+  .view-all-link {
+    font-size: 12px !important;
+  }
+  
+  /* Request items */
+  .request-item {
+    padding: 14px !important;
+    margin-bottom: 10px !important;
+  }
+  
+  .request-info h3 {
+    font-size: 14px !important;
+    padding-right: 80px !important;
+  }
+  
+  .request-details {
+    flex-direction: column !important;
+    gap: 6px !important;
+    align-items: flex-start !important;
+  }
+  
+  .request-details span {
+    font-size: 12px !important;
+  }
+  
+  /* Emergency banner */
+  .emergency-banner {
+    width: 100% !important;
+    padding: 18px !important;
+    margin: 24px 0 !important;
+    gap: 14px !important;
+    box-sizing: border-box !important;
+  }
+  
+  .emergency-banner i {
+    font-size: 28px !important;
+  }
+  
+  .emergency-banner h3 {
+    font-size: 16px !important;
+  }
+  
+  .emergency-banner p {
+    font-size: 13px !important;
+  }
+}
+
+/* Extra small phones (iPhone SE, small Android) */
+@media (max-width: 375px) {
+  
+  .main-content {
+    padding: 12px !important;
+  }
+  
+  .welcome-card {
+    padding: 16px !important;
+  }
+  
+  .welcome-text h2 {
+    font-size: 20px !important;
+  }
+  
+  /* Stack stats vertically on very small screens */
+  .stats-container {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+  
+  .stat-card {
+    min-height: auto !important;
+    padding: 14px 12px !important;
+  }
+  
+  /* Stack actions vertically on very small screens */
+  .actions-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .action-card {
+    min-height: auto !important;
+    padding: 16px 14px !important;
+  }
+}
+
+/* Landscape mode optimization */
+@media (max-width: 768px) and (orientation: landscape) {
+  .stats-container {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+  
+  .actions-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+  
+  .dashboard-grid {
+    flex-direction: row !important;
+  }
+  
+  .section-card {
+    flex: 1 !important;
+  }
+}
+
+/* Prevent text from being too small */
+@media (max-width: 768px) {
+  * {
+    -webkit-text-size-adjust: 100% !important;
+    text-size-adjust: 100% !important;
+  }
+}
+
+/* Fix for cards not fitting viewport */
+@media (max-width: 768px) {
+  .stat-card,
+  .action-card,
+  .section-card,
+  .request-item,
+  .donor-card,
+  .blood-request-card {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
+
+/* ================================================
+   ENHANCED PROFILE SECTION - MOBILE SIDEBAR
+   ================================================ */
+
+@media (max-width: 768px) {
+  
+  /* Mobile Profile Section Enhancement */
+  .mobile-profile-section {
+    display: block !important;
+    padding: 24px 20px 20px !important;
+    background: linear-gradient(135deg, #fff1f2 0%, #ffffff 100%) !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+    margin-bottom: 16px !important;
+    position: relative !important;
+  }
+  
+  .mobile-close-btn {
+    position: absolute !important;
+    top: 16px !important;
+    right: 16px !important;
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 10px !important;
+    background: rgba(0, 0, 0, 0.05) !important;
+    border: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    font-size: 20px !important;
+    color: #666 !important;
+    transition: all 0.2s !important;
+  }
+  
+  .mobile-close-btn:hover {
+    background: rgba(0, 0, 0, 0.1) !important;
+    transform: rotate(90deg) !important;
+  }
+  
+  .mobile-profile-info {
+    display: flex !important;
+    align-items: center !important;
+    gap: 16px !important;
+    margin-bottom: 0 !important;
+    padding-top: 8px !important;
+  }
+  
+  .mobile-profile-circle {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50% !important;
+    background: linear-gradient(135deg, #ff4b5c 0%, #e11d48 100%) !important;
+    color: white !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-weight: 700 !important;
+    font-size: 24px !important;
+    flex-shrink: 0 !important;
+    box-shadow: 0 4px 12px rgba(255, 75, 92, 0.3) !important;
+    border: 3px solid white !important;
+  }
+  
+  .mobile-profile-details {
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+  
+  .mobile-profile-details h3 {
+    margin: 0 0 4px !important;
+    font-size: 18px !important;
+    color: #111 !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.3px !important;
+  }
+  
+  .mobile-profile-details p {
+    margin: 0 !important;
+    font-size: 13px !important;
+    color: #666 !important;
+    font-weight: 400 !important;
+    word-break: break-word !important;
+    line-height: 1.4 !important;
+  }
+  
+  /* Add a subtle divider after profile section */
+  .mobile-profile-section::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 20px !important;
+    right: 20px !important;
+    height: 1px !important;
+    background: linear-gradient(90deg, transparent, #e5e7eb, transparent) !important;
+  }
+}
+
+/* ================================================
+   DESKTOP PROFILE DROPDOWN ENHANCEMENT
+   ================================================ */
+
+.profile-dropdown {
+  position: absolute !important;
+  top: calc(100% + 12px) !important;
+  right: 0 !important;
+  width: 280px !important;
+  background: #ffffff !important;
+  border-radius: 16px !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid #f0f0f0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(-10px) scale(0.95) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  z-index: 1000 !important;
+  overflow: hidden !important;
+}
+
+.profile-dropdown.active {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+.profile-dropdown-header {
+  padding: 20px !important;
+  background: linear-gradient(135deg, #fff1f2 0%, #ffffff 100%) !important;
+  border-bottom: 1px solid #f5f5f5 !important;
+  position: relative !important;
+}
+
+.profile-dropdown-header::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 3px !important;
+  background: linear-gradient(90deg, #ff4b5c, #ff6b7a) !important;
+}
+
+.profile-dropdown-header h3 {
+  margin: 0 0 6px !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #111 !important;
+  letter-spacing: -0.3px !important;
+}
+
+.profile-dropdown-header p {
+  margin: 0 !important;
+  font-size: 13px !important;
+  color: #666 !important;
+  font-weight: 400 !important;
+  word-break: break-word !important;
+  line-height: 1.4 !important;
+}
+
+.profile-dropdown-menu {
+  padding: 10px !important;
+}
+
+.profile-dropdown-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 12px 16px !important;
+  border-radius: 10px !important;
+  color: #333 !important;
+  text-decoration: none !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  transition: all 0.2s !important;
+  cursor: pointer !important;
+  margin-bottom: 2px !important;
+}
+
+.profile-dropdown-item:hover {
+  background: #f9fafb !important;
+  transform: translateX(4px) !important;
+}
+
+.profile-dropdown-item i {
+  font-size: 16px !important;
+  color: #666 !important;
+  width: 20px !important;
+  text-align: center !important;
+  transition: color 0.2s !important;
+}
+
+.profile-dropdown-item:hover i {
+  color: #ff4b5c !important;
+}
+
+.profile-dropdown-item.logout {
+  color: #ef4444 !important;
+  border-top: 1px solid #f5f5f5 !important;
+  margin-top: 8px !important;
+  padding-top: 14px !important;
+}
+
+.profile-dropdown-item.logout i {
+  color: #ef4444 !important;
+}
+
+.profile-dropdown-item.logout:hover {
+  background: #fef2f2 !important;
+  color: #dc2626 !important;
+}
+
+.profile-dropdown-item.logout:hover i {
+  color: #dc2626 !important;
+}
+
+/* Desktop Profile Button Enhancement */
+.profile {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 10px 16px !important;
+  background: #f9fafb !important;
+  border-radius: 12px !important;
+  cursor: pointer !important;
+  transition: all 0.3s !important;
+  border: 1px solid transparent !important;
+}
+
+.profile:hover {
+  background: #f3f4f6 !important;
+  border-color: #e5e7eb !important;
+  transform: translateY(-1px) !important;
+}
+
+.profile-circle {
+  width: 38px !important;
+  height: 38px !important;
+  background: linear-gradient(135deg, #ff4b5c, #e11d48) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: white !important;
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  box-shadow: 0 2px 8px rgba(255, 75, 92, 0.25) !important;
+}
+
+.profile span {
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  color: #111 !important;
+}
+
+.profile i.fa-chevron-down {
+  color: #999 !important;
+  transition: transform 0.3s !important;
+}
+
+.profile:hover i.fa-chevron-down {
+  transform: translateY(2px) !important;
+}
+
+/* Add subtle animation when dropdown opens */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.profile-dropdown.active {
+  animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* ================================================
+   FIND DONORS PAGE - MOBILE OPTIMIZATION
+   ================================================ */
+
+@media (max-width: 768px) {
+  
+  /* Page Header */
+  .page-header {
+    width: 100% !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .page-header-top {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+  
+  .page-header h1 {
+    font-size: 24px !important;
+    line-height: 1.3 !important;
+  }
+  
+  .page-header p {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+  
+  .donors-count {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 12px 16px !important;
+    border-radius: 12px !important;
+  }
+  
+  .donors-count i {
+    font-size: 18px !important;
+  }
+  
+  .donors-count strong {
+    font-size: 16px !important;
+  }
+  
+  /* Filter Section - Mobile */
+  .filter-section {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 18px !important;
+    margin-bottom: 20px !important;
+    box-sizing: border-box !important;
+  }
+  
+  .filter-header {
+    font-size: 16px !important;
+    margin-bottom: 14px !important;
+  }
+  
+  .filter-header i {
+    font-size: 16px !important;
+  }
+  
+  /* Filter Grid - Stack on Mobile - FORCE IT */
+  .filter-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+  
+  .filter-input {
+    width: 100% !important;
+    max-width: 100% !important;
+    position: relative !important;
+  }
+  
+  .filter-input i {
+    position: absolute !important;
+    left: 14px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: #999 !important;
+    font-size: 16px !important;
+    z-index: 1 !important;
+  }
+  
+  .filter-input input,
+  .filter-input select {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 48px !important;
+    padding: 12px 16px 12px 44px !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 12px !important;
+    font-size: 15px !important;
+    background: #fafbfc !important;
+    box-sizing: border-box !important;
+    appearance: none !important;
+  }
+  
+  .filter-input select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 9L1 4h10z'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 16px center !important;
+    padding-left: 16px !important;
+  }
+  
+  .filter-input input::placeholder {
+    color: #aaa !important;
+    font-size: 14px !important;
+  }
+  
+  /* FORCE DONORS GRID TO SINGLE COLUMN */
+  .donors-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  /* FORCE DONOR CARD FULL WIDTH */
+  .donor-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 18px !important;
+    box-sizing: border-box !important;
+    border-radius: 16px !important;
+    margin: 0 !important;
+    float: none !important;
+  }
+  
+  .donor-header {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+    align-items: flex-start !important;
+    margin-bottom: 16px !important;
+    width: 100% !important;
+  }
+  
+  .donor-avatar {
+    width: 52px !important;
+    height: 52px !important;
+    font-size: 20px !important;
+    flex-shrink: 0 !important;
+  }
+  
+  .donor-info-header {
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+  
+  .donor-name {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    margin-bottom: 4px !important;
+  }
+  
+  .donor-name h3 {
+    font-size: 16px !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  
+  .donor-name i {
+    font-size: 15px !important;
+    flex-shrink: 0 !important;
+  }
+  
+  .donor-location {
+    font-size: 13px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    color: #888 !important;
+  }
+  
+  .donor-location i {
+    font-size: 12px !important;
+  }
+  
+  /* Blood Type Badge - Full Width on Mobile */
+  .blood-type-badge {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    padding: 10px !important;
+    font-size: 15px !important;
+    border-radius: 10px !important;
+    font-weight: 700 !important;
+    margin-top: 8px !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Donor Stats - Stack on Mobile */
+  .donor-stats {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    margin-bottom: 16px !important;
+    width: 100% !important;
+  }
+  
+  .stat-item {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 8px 0 !important;
+    border-bottom: 1px solid #f5f5f5 !important;
+    font-size: 13px !important;
+  }
+  
+  .stat-item:last-child {
+    border-bottom: none !important;
+  }
+  
+  .stat-label {
+    color: #888 !important;
+    font-weight: 500 !important;
+  }
+  
+  .stat-value {
+    color: #111 !important;
+    font-weight: 600 !important;
+  }
+  
+  .availability-badge {
+    padding: 6px 12px !important;
+    border-radius: 8px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+  }
+  
+  /* Contact Button - Mobile */
+  .contact-btn {
+    width: 100% !important;
+    padding: 14px !important;
+    border-radius: 12px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    transition: all 0.3s !important;
+  }
+  
+  .contact-btn i {
+    font-size: 16px !important;
+  }
+}
+
+/* Extra Small Phones - Find Donors */
+@media (max-width: 375px) {
+  
+  .page-header h1 {
+    font-size: 22px !important;
+  }
+  
+  .filter-section {
+    padding: 16px !important;
+  }
+  
+  .donor-card {
+    padding: 16px !important;
+  }
+  
+  .donor-avatar {
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 18px !important;
+  }
+  
+  .donor-name h3 {
+    font-size: 15px !important;
+  }
+  
+  .blood-type-badge {
+    font-size: 14px !important;
+  }
+}
+
+/* Tablet - Find Donors */
+@media (min-width: 769px) and (max-width: 1024px) {
+  
+  .donors-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 18px !important;
+  }
+  
+  .filter-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px !important;
+  }
+}
+
+/* Large Desktop - Find Donors */
+@media (min-width: 1440px) {
+  
+  .donors-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+/* ================================================
+   CRITICAL MOBILE OVERRIDES - MUST BE AT END
+   ================================================ */
+
+/* NUCLEAR OPTION: Force single column on mobile for ALL grids */
+@media (max-width: 768px) {
+  
+  /* DONORS GRID - ABSOLUTE FORCE */
+  .donors-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-auto-rows: auto !important;
+    gap: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+  
+  /* FORCE ALL CHILDREN TO FULL WIDTH */
+  .donors-grid > * {
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-column: 1 / -1 !important;
+  }
+  
+  /* FILTER GRID - ABSOLUTE FORCE */
+  .filter-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  
+  /* FORCE ALL FILTER CHILDREN TO FULL WIDTH */
+  .filter-grid > * {
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-column: 1 / -1 !important;
+  }
+}
+
+/* Extra certainty for very specific screen sizes */
+@media (max-width: 480px) {
+  .donors-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .filter-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .donors-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .filter-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Specific override for iPhone sizes */
+@media (max-width: 430px) {
+  .donors-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 393px) {
+  .donors-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .donors-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ================================================
+   FIND DONORS PAGE - DEDICATED MOBILE FIX
+   Added separately - does not modify other code
+   ================================================ */
+
+@media screen and (max-width: 768px) {
+  
+  /* Force donors grid to single column - highest priority */
+  body .main-content .donors-grid,
+  .main-content .donors-grid,
+  div.donors-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+    gap: 16px !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+  
+  /* Force each donor card to full width */
+  body .main-content .donors-grid .donor-card,
+  .main-content .donors-grid .donor-card,
+  .donors-grid > .donor-card,
+  div.donor-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    grid-column: 1 !important;
+  }
+  
+  /* Force filter grid to stack vertically */
+  body .main-content .filter-section .filter-grid,
+  .main-content .filter-section .filter-grid,
+  .filter-section .filter-grid,
+  div.filter-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  
+  /* Force all filter inputs to full width */
+  body .filter-section .filter-grid .filter-input,
+  .filter-section .filter-grid .filter-input,
+  .filter-grid > .filter-input,
+  div.filter-input {
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-column: 1 !important;
+  }
+  
+  /* Ensure filter inputs don't have weird behavior */
+  .filter-input input,
+  .filter-input select {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Page header adjustments */
+  body .main-content .page-header,
+  .main-content .page-header,
+  div.page-header {
+    width: 100% !important;
+  }
+  
+  .page-header .page-header-top {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  
+  .page-header .donors-count {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+/* Extra specific for common phone widths */
+@media screen and (max-width: 430px) {
+  .donors-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .donors-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media screen and (max-width: 393px) {
+  .donors-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .donors-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .donors-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .donors-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Portrait orientation specific */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+  .donors-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .filter-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Additional safety net with higher specificity */
+@media screen and (max-width: 768px) {
+  html body .main-content .donors-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  html body .main-content .filter-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Very specific override for grid children */
+@media screen and (max-width: 768px) {
+  .donors-grid > div,
+  .donors-grid > .donor-card,
+  .donors-grid > * {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    grid-column: 1 / 2 !important;
+  }
+}

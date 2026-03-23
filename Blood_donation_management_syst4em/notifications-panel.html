@@ -1,0 +1,64 @@
+<!-- Notifications Panel Overlay -->
+<div class="notifications-overlay" id="notificationsOverlay" onclick="closeNotifications()"></div>
+
+<!-- Notifications Panel -->
+<div class="notifications-panel" id="notificationsPanel">
+  <div class="notifications-panel-header">
+    <div>
+      <h2>Notifications</h2>
+      <p>All caught up!</p>
+    </div>
+    <button class="notifications-close-btn" onclick="closeNotifications()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+
+  <div class="notifications-content">
+    <div class="notifications-empty-state">
+      <div class="notifications-bell-icon">
+        <i class="fa-regular fa-bell"></i>
+      </div>
+      <h3>No Notifications</h3>
+      <p>You're all caught up! Check back later for updates.</p>
+    </div>
+
+    <!-- When there are notifications, use this structure instead -->
+    <!--
+    <div class="notifications-list">
+      <div class="notification-item unread">
+        <div class="notification-icon emergency">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <div class="notification-content">
+          <h4>Emergency Blood Request</h4>
+          <p>O- blood type urgently needed at Metro General Hospital</p>
+          <span class="notification-time">5 minutes ago</span>
+        </div>
+        <div class="notification-dot"></div>
+      </div>
+
+      <div class="notification-item">
+        <div class="notification-icon success">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <div class="notification-content">
+          <h4>Appointment Confirmed</h4>
+          <p>Your donation appointment has been confirmed for Jan 28</p>
+          <span class="notification-time">2 hours ago</span>
+        </div>
+      </div>
+
+      <div class="notification-item">
+        <div class="notification-icon info">
+          <i class="fa-solid fa-heart"></i>
+        </div>
+        <div class="notification-content">
+          <h4>New Blood Request</h4>
+          <p>A+ blood type needed at City Central Blood Bank</p>
+          <span class="notification-time">1 day ago</span>
+        </div>
+      </div>
+    </div>
+    -->
+  </div>
+</div>
