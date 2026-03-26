@@ -424,6 +424,30 @@
         measurementId: "G-R6116M92LQ",
       };
 
+
+      <button class="btn-primary" onclick="openRequestModal()">Request Blood</button>
+
+<div id="requestModal" class="modal">
+  <div class="modal-content card">
+    <span class="close-btn" onclick="closeRequestModal()">&times;</span>
+    <form id="requestForm" class="form">
+      <h3>Create Blood Request</h3>
+      <p class="subtitle">Fill in the details to alert nearby donors.</p>
+      
+      <div class="input-group">
+        <input type="text" id="patientName" placeholder="Patient Name" required />
+        <input type="text" id="bloodType" placeholder="Blood Group (e.g., A+)" required />
+      </div>
+      
+      <input type="number" id="unitCount" placeholder="Units Needed" required />
+      <input type="text" id="hospitalName" placeholder="Hospital/Location" required />
+      <input type="tel" id="contactInfo" placeholder="Contact Number" required />
+      
+      <button type="submit" class="submit-btn">Post Request</button>
+    </form>
+  </div>
+</div>
+
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
       const analytics = getAnalytics(app);
